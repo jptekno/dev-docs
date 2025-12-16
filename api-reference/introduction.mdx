@@ -1,0 +1,84 @@
+---
+title: "API Reference"
+description: "Complete reference for the Example API"
+---
+
+# API Reference
+
+Welcome to the API reference documentation. This section covers all available endpoints.
+
+## Base URL
+
+```
+https://api.example.com/v1
+```
+
+## Authentication
+
+All API requests require authentication using an API key:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.example.com/v1/users
+```
+
+<Warning>
+  Never share your API key or commit it to version control. Use environment variables instead.
+</Warning>
+
+## Rate Limiting
+
+| Plan | Requests per minute |
+|------|---------------------|
+| Free | 60 |
+| Pro | 600 |
+| Enterprise | Unlimited |
+
+## Response Format
+
+All responses are returned in JSON format:
+
+```json
+{
+  "success": true,
+  "data": { ... },
+  "meta": {
+    "page": 1,
+    "total": 100
+  }
+}
+```
+
+## Error Handling
+
+<AccordionGroup>
+  <Accordion title="400 Bad Request">
+    Invalid request parameters. Check the error message for details.
+  </Accordion>
+  <Accordion title="401 Unauthorized">
+    Invalid or missing API key.
+  </Accordion>
+  <Accordion title="404 Not Found">
+    The requested resource doesn't exist.
+  </Accordion>
+  <Accordion title="429 Too Many Requests">
+    Rate limit exceeded. Wait and retry.
+  </Accordion>
+</AccordionGroup>
+
+## Endpoints
+
+<CardGroup cols={2}>
+  <Card title="GET /users" href="/api-reference/endpoint/get">
+    Retrieve user information
+  </Card>
+  <Card title="POST /users" href="/api-reference/endpoint/create">
+    Create a new user
+  </Card>
+  <Card title="DELETE /users/:id" href="/api-reference/endpoint/delete">
+    Delete a user
+  </Card>
+  <Card title="Webhooks" href="/api-reference/endpoint/webhook">
+    Receive real-time events
+  </Card>
+</CardGroup>
