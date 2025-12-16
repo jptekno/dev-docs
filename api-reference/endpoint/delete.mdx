@@ -1,0 +1,87 @@
+---
+title: "Delete User"
+api: "DELETE https://api.example.com/v1/users/{id}"
+description: "Permanently delete a user account"
+---
+
+# Delete User
+
+Permanently delete a user account and all associated data.
+
+<Warning>
+  This action is irreversible. All user data will be permanently deleted.
+</Warning>
+
+## Path Parameters
+
+<ParamField path="id" type="string" required>
+  The unique identifier of the user to delete
+</ParamField>
+
+## Query Parameters
+
+<ParamField query="force" type="boolean" default="false">
+  If true, delete user even if they have active resources
+</ParamField>
+
+## Response
+
+Returns an empty response with status 204 on success.
+
+<RequestExample>
+```bash cURL
+curl -X DELETE "https://api.example.com/v1/users/usr_123" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.example.com/v1/users/usr_123', {
+  method: 'DELETE',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY'
+  }
+});
+
+if (response.status === 204) {
+  console.log('User deleted successfully');
+}
+```
+
+```python Python
+import requests
+
+response = requests.delete(
+    'https://api.example.com/v1/users/usr_123',
+    headers={'Authorization': 'Bearer YOUR_API_KEY'}
+)
+
+if response.status_code == 204:
+    print('User deleted successfully')
+```
+</RequestExample>
+
+<ResponseExample>
+```json 204
+// No content
+```
+
+```json 404
+{
+  "success": false,
+  "error": {
+    "code": "NOT_FOUND",
+    "message": "User not found"
+  }
+}
+```
+
+```json 409
+{
+  "success": false,
+  "error": {
+    "code": "CONFLICT",
+    "message": "User has active resources. Use force=true to delete anyway."
+  }
+}
+```
+</ResponseExample>
