@@ -1,0 +1,72 @@
+---
+title: "Windsurf"
+description: "Use Windsurf IDE for AI-powered documentation editing"
+---
+
+# Windsurf Integration
+
+Windsurf is an AI-native IDE with powerful documentation editing capabilities.
+
+## Getting Started
+
+<Steps>
+  <Step title="Install Windsurf">
+    Download from [codeium.com/windsurf](https://codeium.com/windsurf)
+  </Step>
+
+  <Step title="Open your docs folder">
+    Open your documentation repository in Windsurf.
+  </Step>
+
+  <Step title="Configure workspace rules">
+    Create a `.windsurf/rules` directory for custom AI instructions.
+  </Step>
+</Steps>
+
+## Workspace Rules
+
+Create documentation-specific rules for better AI assistance:
+
+```markdown .windsurf/rules/docs.md
+# Documentation Rules
+
+## Writing Style
+- Use second person ("you")
+- Keep sentences concise
+- Include code examples
+
+## Components
+- Use <Note> for tips
+- Use <Warning> for cautions
+- Use <Steps> for procedures
+
+## Structure
+- Start with frontmatter
+- Use descriptive headings
+- Include next steps
+```
+
+## Cascade Features
+
+Use Cascade (Windsurf's AI) for documentation tasks:
+
+<CardGroup cols={2}>
+  <Card title="Generate content" icon="wand-magic-sparkles">
+    "Write a guide about rate limiting"
+  </Card>
+  <Card title="Review docs" icon="magnifying-glass">
+    "Review this page for technical accuracy"
+  </Card>
+  <Card title="Add examples" icon="code">
+    "Add more code examples to this page"
+  </Card>
+  <Card title="Fix formatting" icon="text">
+    "Fix the MDX formatting in this file"
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<Note>
+  Create workspace rules specific to your documentation style for consistent AI-generated content.
+</Note>
