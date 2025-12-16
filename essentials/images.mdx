@@ -1,0 +1,87 @@
+---
+title: "Images & Media"
+description: "Add images, videos, and other media to your documentation"
+---
+
+# Images & Media
+
+Enhance your documentation with visual content.
+
+## Adding Images
+
+### Basic Image
+
+```markdown
+![Alt text](/path/to/image.png)
+```
+
+### With Frame
+
+Wrap images in a Frame component for a polished look:
+
+```mdx
+<Frame>
+  <img src="/path/to/image.png" alt="Description" />
+</Frame>
+```
+
+### With Caption
+
+```mdx
+<Frame caption="This is the image caption">
+  <img src="/path/to/image.png" alt="Description" />
+</Frame>
+```
+
+## Image Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use descriptive alt text">
+    Always include alt text for accessibility and SEO.
+  </Accordion>
+  <Accordion title="Optimize file sizes">
+    Compress images before uploading. Use WebP or PNG for screenshots, JPEG for photos.
+  </Accordion>
+  <Accordion title="Use relative paths">
+    Store images in your repository and use relative paths like `/images/screenshot.png`.
+  </Accordion>
+</AccordionGroup>
+
+## Videos
+
+### Embed YouTube
+
+```mdx
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  frameBorder="0"
+  allowFullScreen
+/>
+```
+
+### Embed Loom
+
+```mdx
+<iframe
+  src="https://www.loom.com/embed/VIDEO_ID"
+  frameBorder="0"
+  allowFullScreen
+/>
+```
+
+## File Organization
+
+```
+your-docs/
+├── images/
+│   ├── hero.png
+│   ├── screenshots/
+│   │   ├── dashboard.png
+│   │   └── settings.png
+│   └── diagrams/
+│       └── architecture.svg
+└── videos/
+    └── demo.mp4
+```
