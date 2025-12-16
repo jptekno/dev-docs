@@ -1,0 +1,79 @@
+---
+title: "Reusable Snippets"
+description: "Create and use reusable content snippets across your documentation"
+---
+
+# Reusable Snippets
+
+Avoid repetition by creating reusable content snippets.
+
+## Creating Snippets
+
+Create a `snippets` folder and add MDX files:
+
+```
+your-docs/
+├── snippets/
+│   ├── prerequisites.mdx
+│   ├── auth-warning.mdx
+│   └── support-footer.mdx
+└── guides/
+    └── quickstart.mdx
+```
+
+## Snippet File
+
+```mdx snippets/prerequisites.mdx
+<Info>
+  **Prerequisites**
+  - Node.js v18 or higher
+  - npm or yarn package manager
+  - A DubStack account
+</Info>
+```
+
+## Using Snippets
+
+Import and use snippets in any MDX file:
+
+```mdx guides/quickstart.mdx
+---
+title: "Quickstart"
+---
+
+import Prerequisites from '/snippets/prerequisites.mdx';
+
+# Getting Started
+
+<Prerequisites />
+
+Now let's begin...
+```
+
+## Common Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Prerequisites" icon="list-check">
+    Reuse requirement lists across guides
+  </Card>
+  <Card title="Warnings" icon="triangle-exclamation">
+    Consistent warning messages
+  </Card>
+  <Card title="Code Examples" icon="code">
+    Share common code patterns
+  </Card>
+  <Card title="Support CTAs" icon="headset">
+    Standardize support information
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<Note>
+  Keep snippets focused on a single piece of content. If a snippet is too large, consider making it a full page instead.
+</Note>
+
+- Name snippets descriptively
+- Keep snippets small and focused
+- Document what each snippet contains
+- Update snippets in one place to update everywhere
