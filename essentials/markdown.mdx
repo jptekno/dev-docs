@@ -1,0 +1,93 @@
+---
+title: "Markdown & MDX"
+description: "Learn how to write documentation using Markdown and MDX"
+---
+
+# Writing with Markdown & MDX
+
+DubStack uses MDX, which combines Markdown with JSX components for rich documentation.
+
+## Basic Markdown
+
+### Headings
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+```
+
+### Text Formatting
+
+| Style | Syntax | Result |
+|-------|--------|--------|
+| Bold | `**text**` | **text** |
+| Italic | `*text*` | *text* |
+| Code | `\`code\`` | `code` |
+| Link | `[text](url)` | [text](url) |
+
+### Lists
+
+```markdown
+- Unordered item
+- Another item
+
+1. Ordered item
+2. Another item
+```
+
+## MDX Components
+
+MDX allows you to use React components in your Markdown:
+
+### Callouts
+
+<CodeGroup>
+```mdx Note
+<Note>This is helpful information.</Note>
+```
+
+```mdx Warning
+<Warning>Be careful with this action.</Warning>
+```
+
+```mdx Info
+<Info>Additional context here.</Info>
+```
+</CodeGroup>
+
+<Note>This is how a note looks when rendered.</Note>
+
+<Warning>This is how a warning looks when rendered.</Warning>
+
+### Cards
+
+```mdx
+<Card title="Card Title" icon="rocket" href="/path">
+  Card description goes here.
+</Card>
+```
+
+### Accordions
+
+```mdx
+<AccordionGroup>
+  <Accordion title="Question 1">
+    Answer to question 1.
+  </Accordion>
+  <Accordion title="Question 2">
+    Answer to question 2.
+  </Accordion>
+</AccordionGroup>
+```
+
+## Frontmatter
+
+Every MDX file starts with frontmatter:
+
+```yaml
+---
+title: "Page Title"
+description: "Page description for SEO"
+---
+```
