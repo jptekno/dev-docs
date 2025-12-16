@@ -1,0 +1,78 @@
+---
+title: "Settings"
+description: "Configure your documentation site with dubstack.json"
+---
+
+# Configuration Settings
+
+The `dubstack.json` file is the central configuration for your documentation site.
+
+## Basic Settings
+
+```json dubstack.json
+{
+  "$schema": "https://dubstack.dev/schema/v1.json",
+  "name": "Your Documentation",
+  "theme": "mint",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  }
+}
+```
+
+## Available Themes
+
+| Theme | Description |
+|-------|-------------|
+| `mint` | Fresh green theme (default) |
+| `ocean` | Blue oceanic theme |
+| `sunset` | Warm orange/red theme |
+| `purple` | Rich purple theme |
+| `slate` | Neutral gray theme |
+
+## Color Customization
+
+<Tabs>
+  <Tab title="Primary Color">
+    The main brand color used for links, buttons, and accents.
+    ```json
+    "colors": {
+      "primary": "#16A34A"
+    }
+    ```
+  </Tab>
+  <Tab title="Light Mode">
+    Colors used in light mode.
+    ```json
+    "colors": {
+      "light": "#07C983"
+    }
+    ```
+  </Tab>
+  <Tab title="Dark Mode">
+    Colors used in dark mode.
+    ```json
+    "colors": {
+      "dark": "#15803D"
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Logo Configuration
+
+```json dubstack.json
+{
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg"
+}
+```
+
+<Note>
+  Place your logo files in the root of your repository. SVG format is recommended for best quality.
+</Note>
