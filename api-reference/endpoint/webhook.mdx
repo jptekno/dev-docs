@@ -1,0 +1,99 @@
+---
+title: "Webhooks"
+description: "Receive real-time notifications about events in your account"
+---
+
+# Webhooks
+
+Webhooks allow you to receive real-time HTTP notifications when events occur in your account.
+
+## Setup
+
+<Steps>
+  <Step title="Create a webhook endpoint">
+    Create an HTTP endpoint on your server to receive webhook events.
+  </Step>
+
+  <Step title="Register the webhook">
+    Register your endpoint URL in your dashboard or via the API.
+  </Step>
+
+  <Step title="Verify signatures">
+    Validate webhook signatures to ensure requests are from us.
+  </Step>
+</Steps>
+
+## Event Types
+
+| Event | Description |
+|-------|-------------|
+| `user.created` | A new user was created |
+| `user.updated` | User information was updated |
+| `user.deleted` | A user was deleted |
+| `payment.completed` | Payment was successful |
+| `payment.failed` | Payment failed |
+
+## Payload Format
+
+All webhooks follow this format:
+
+```json
+{
+  "id": "evt_123abc",
+  "type": "user.created",
+  "created": "2024-01-20T10:30:00Z",
+  "data": {
+    "id": "usr_456",
+    "email": "new@example.com",
+    "name": "New User"
+  }
+}
+```
+
+## Verifying Signatures
+
+<CodeGroup>
+```javascript Node.js
+const crypto = require('crypto');
+
+function verifyWebhook(payload, signature, secret) {
+  const expected = crypto
+    .createHmac('sha256', secret)
+    .update(payload)
+    .digest('hex');
+
+  return crypto.timingSafeEqual(
+    Buffer.from(signature),
+    Buffer.from(expected)
+  );
+}
+```
+
+```python Python
+import hmac
+import hashlib
+
+def verify_webhook(payload, signature, secret):
+    expected = hmac.new(
+        secret.encode(),
+        payload.encode(),
+        hashlib.sha256
+    ).hexdigest()
+
+    return hmac.compare_digest(signature, expected)
+```
+</CodeGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Respond quickly">
+    Return a 200 response as soon as possible. Process events asynchronously.
+  </Accordion>
+  <Accordion title="Handle retries">
+    We retry failed deliveries up to 3 times with exponential backoff.
+  </Accordion>
+  <Accordion title="Use idempotency">
+    Store event IDs to handle duplicate deliveries gracefully.
+  </Accordion>
+</AccordionGroup>
