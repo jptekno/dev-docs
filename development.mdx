@@ -1,0 +1,80 @@
+---
+title: "Development"
+description: "Set up your local development environment for writing documentation"
+---
+
+# Local Development
+
+Preview your documentation changes locally before pushing to production.
+
+## Prerequisites
+
+<Info>
+  Make sure you have Node.js v18 or higher installed on your machine.
+</Info>
+
+## Getting Started
+
+<Steps>
+  <Step title="Clone your repository">
+    ```bash
+    git clone https://github.com/your-org/your-docs.git
+    cd your-docs
+    ```
+  </Step>
+
+  <Step title="Install the DubStack CLI">
+    ```bash
+    npm install -g @dubstack/cli
+    ```
+  </Step>
+
+  <Step title="Start the development server">
+    ```bash
+    dubstack dev
+    ```
+
+    Your docs will be available at `http://localhost:3000`.
+  </Step>
+</Steps>
+
+## Hot Reloading
+
+The development server automatically reloads when you make changes to:
+
+- MDX content files
+- `dubstack.json` configuration
+- Custom components
+
+## Editor Setup
+
+For the best editing experience, we recommend:
+
+<CardGroup cols={3}>
+  <Card title="VS Code" icon="microsoft">
+    Install the MDX extension for syntax highlighting
+  </Card>
+  <Card title="Cursor" icon="wand-magic-sparkles" href="/ai-tools/cursor">
+    AI-powered editing with MDX support
+  </Card>
+  <Card title="Windsurf" icon="wind" href="/ai-tools/windsurf">
+    Claude-powered documentation editing
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Port already in use">
+    Run on a different port:
+    ```bash
+    dubstack dev --port 3001
+    ```
+  </Accordion>
+  <Accordion title="Changes not reflecting">
+    Try clearing the cache:
+    ```bash
+    dubstack dev --clear-cache
+    ```
+  </Accordion>
+</AccordionGroup>
