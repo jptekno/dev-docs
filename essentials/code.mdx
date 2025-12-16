@@ -1,0 +1,82 @@
+---
+title: "Code Blocks"
+description: "Display code with syntax highlighting and interactive features"
+---
+
+# Code Blocks
+
+DubStack provides powerful code block features with syntax highlighting, line numbers, and more.
+
+## Basic Code Block
+
+Use triple backticks with a language identifier:
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+```
+
+## Supported Languages
+
+We support 100+ programming languages including:
+
+<CardGroup cols={4}>
+  <Card title="JavaScript" icon="js" />
+  <Card title="TypeScript" icon="code" />
+  <Card title="Python" icon="python" />
+  <Card title="Go" icon="golang" />
+  <Card title="Rust" icon="rust" />
+  <Card title="Java" icon="java" />
+  <Card title="Ruby" icon="gem" />
+  <Card title="PHP" icon="php" />
+</CardGroup>
+
+## Code Block Features
+
+### With Title
+
+```python hello.py
+def hello():
+    print("Hello, World!")
+```
+
+### With Line Numbers
+
+```javascript showLineNumbers
+const x = 1;
+const y = 2;
+const sum = x + y;
+console.log(sum);
+```
+
+### With Line Highlighting
+
+```typescript {2-3}
+function calculate() {
+  const result = 42;
+  return result;
+}
+```
+
+## Code Groups
+
+Show the same example in multiple languages:
+
+<CodeGroup>
+```javascript JavaScript
+fetch('/api/users')
+  .then(res => res.json())
+  .then(data => console.log(data));
+```
+
+```python Python
+import requests
+response = requests.get('/api/users')
+print(response.json())
+```
+
+```bash cURL
+curl -X GET https://api.example.com/users
+```
+</CodeGroup>
