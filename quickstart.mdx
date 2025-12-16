@@ -1,0 +1,78 @@
+---
+title: "Quickstart"
+description: "Get your documentation site up and running in under 5 minutes"
+---
+
+# Quickstart Guide
+
+Follow these steps to customize and deploy your documentation site.
+
+<Steps>
+  <Step title="Customize your configuration">
+    Open `dubstack.json` and update the basic settings:
+
+    ```json dubstack.json
+    {
+      "name": "Your Project Name",
+      "colors": {
+        "primary": "#your-brand-color"
+      }
+    }
+    ```
+  </Step>
+
+  <Step title="Update the content">
+    Edit the MDX files in your repository to add your own documentation:
+
+    - `index.mdx` - Your homepage
+    - `quickstart.mdx` - Getting started guide
+    - Add new pages by creating `.mdx` files
+  </Step>
+
+  <Step title="Configure navigation">
+    Update the `navigation` section in `dubstack.json` to organize your pages:
+
+    ```json dubstack.json
+    {
+      "navigation": {
+        "tabs": [
+          {
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": ["index", "quickstart"]
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+  </Step>
+
+  <Step title="Push to deploy">
+    Commit and push your changes. Your site will automatically rebuild and deploy.
+
+    ```bash
+    git add .
+    git commit -m "Update documentation"
+    git push
+    ```
+  </Step>
+</Steps>
+
+<Check>
+  Your documentation site is now live! Visit your dashboard to see the deployment status.
+</Check>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add API docs" icon="code" href="/api-reference/introduction">
+    Document your API with interactive examples
+  </Card>
+  <Card title="Customize theme" icon="palette" href="/essentials/settings">
+    Match your documentation to your brand
+  </Card>
+</CardGroup>
