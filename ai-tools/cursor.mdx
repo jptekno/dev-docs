@@ -1,0 +1,58 @@
+---
+title: "Cursor"
+description: "Use Cursor AI to write and edit your documentation"
+---
+
+# Cursor Integration
+
+Cursor is an AI-powered code editor that excels at writing documentation.
+
+## Setup
+
+<Steps>
+  <Step title="Install Cursor">
+    Download Cursor from [cursor.com](https://cursor.com) and install it.
+  </Step>
+
+  <Step title="Open your docs repository">
+    ```bash
+    cursor /path/to/your-docs
+    ```
+  </Step>
+
+  <Step title="Install MDX extension">
+    Install the MDX extension for syntax highlighting and IntelliSense.
+  </Step>
+</Steps>
+
+## Writing with Cursor
+
+### Use AI to Generate Content
+
+1. Press `Cmd+K` (Mac) or `Ctrl+K` (Windows)
+2. Describe what you want to write
+3. Review and accept the generated content
+
+### Example Prompts
+
+<AccordionGroup>
+  <Accordion title="Generate a quickstart guide">
+    "Write a quickstart guide for setting up authentication with API keys"
+  </Accordion>
+  <Accordion title="Create API documentation">
+    "Document a POST /users endpoint that creates a new user with email and password"
+  </Accordion>
+  <Accordion title="Add code examples">
+    "Add JavaScript, Python, and cURL examples for this API endpoint"
+  </Accordion>
+</AccordionGroup>
+
+## Tips
+
+<Note>
+  Use `@docs` in Cursor to reference your existing documentation when generating new content.
+</Note>
+
+- Keep your `dubstack.json` open for context
+- Use inline editing (`Cmd+K`) for quick fixes
+- Use chat (`Cmd+L`) for longer content generation
