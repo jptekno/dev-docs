@@ -1,0 +1,75 @@
+---
+title: "Claude Code"
+description: "Use Claude Code CLI to manage your documentation"
+---
+
+# Claude Code Integration
+
+Claude Code is Anthropic's official CLI for Claude, perfect for documentation tasks.
+
+## Installation
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+## Setup
+
+<Steps>
+  <Step title="Authenticate">
+    ```bash
+    claude auth login
+    ```
+  </Step>
+
+  <Step title="Navigate to your docs">
+    ```bash
+    cd /path/to/your-docs
+    ```
+  </Step>
+
+  <Step title="Start Claude Code">
+    ```bash
+    claude
+    ```
+  </Step>
+</Steps>
+
+## Common Tasks
+
+### Generate New Pages
+
+```
+> Create a new guide page about webhooks integration with examples
+```
+
+### Improve Existing Content
+
+```
+> Review quickstart.mdx and suggest improvements for clarity
+```
+
+### Add Code Examples
+
+```
+> Add Python and Go examples to the api-reference/endpoint/create.mdx file
+```
+
+## MCP Integration
+
+Claude Code supports MCP servers for enhanced documentation workflows:
+
+```json .claude/mcp.json
+{
+  "servers": {
+    "dubstack": {
+      "command": "npx",
+      "args": ["@dubstack/mcp-server"]
+    }
+  }
+}
+```
+
+<Info>
+  With the DubStack MCP server, Claude can directly interact with your documentation site.
+</Info>
