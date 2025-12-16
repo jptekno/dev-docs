@@ -1,0 +1,95 @@
+---
+title: "Navigation"
+description: "Organize your documentation with tabs, groups, and pages"
+---
+
+# Navigation Structure
+
+DubStack uses a flexible navigation system with tabs, groups, and pages.
+
+## Basic Structure
+
+```json dubstack.json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["index", "quickstart"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Navigation Elements
+
+<AccordionGroup>
+  <Accordion title="Tabs">
+    Top-level navigation items that appear in the header.
+    ```json
+    {
+      "tab": "Guides",
+      "groups": [...]
+    }
+    ```
+  </Accordion>
+
+  <Accordion title="Groups">
+    Sidebar sections that organize related pages.
+    ```json
+    {
+      "group": "Getting Started",
+      "pages": ["index", "quickstart"]
+    }
+    ```
+  </Accordion>
+
+  <Accordion title="Pages">
+    Individual documentation pages (MDX files without the extension).
+    ```json
+    "pages": ["index", "quickstart", "folder/nested-page"]
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Adding Anchors
+
+Add quick links that appear in the sidebar:
+
+```json dubstack.json
+{
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/your-org",
+          "icon": "github"
+        }
+      ]
+    }
+  }
+}
+```
+
+## File Structure
+
+Your MDX files should match the navigation structure:
+
+```
+your-docs/
+├── dubstack.json
+├── index.mdx
+├── quickstart.mdx
+├── guides/
+│   ├── first-guide.mdx
+│   └── second-guide.mdx
+└── api-reference/
+    └── introduction.mdx
+```
